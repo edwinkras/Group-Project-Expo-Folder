@@ -1,11 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Header() {
   return (
-    <View>
-      <Text>Grocery Run</Text>
+    <View style={styles.header}>
+      <Text style={styles.text}>Grocery Run</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    paddingVertical:55,
+    alignItems: "center"
+  },
+
+  text: {
+    fontSize: 28,
+    fontWeight: "700"
+  }
+})
 

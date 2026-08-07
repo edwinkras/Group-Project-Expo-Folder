@@ -4,7 +4,7 @@
 
 
 import Header from "@/components/Header";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, StyleSheet } from "react-native";
 import GroceryItem from "@/components/PlaceCard";
 
 const testItem = {
@@ -20,16 +20,14 @@ export default function Index() {
 
   return (
     <ScrollView>
-      <View>
-        <Header />
-        <GroceryItem item={testItem} />
-        <GroceryItem item={testItem} />
-        <GroceryItem item={testItem} />
-        <GroceryItem item={testItem} />
-        <GroceryItem item={testItem} />
-        <GroceryItem item={testItem} />
-        <GroceryItem item={testItem} />
-      </View>
+      <Header/>
+      <GroceryItem item={testItem} />
+      <GroceryItem item={testItem} />
+      <GroceryItem item={testItem} />
+      <GroceryItem item={testItem} />
+      <GroceryItem item={testItem} />
+      <GroceryItem item={testItem} />
+      <GroceryItem item={testItem} />
     </ScrollView>
   );
 }
