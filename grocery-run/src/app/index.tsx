@@ -4,8 +4,10 @@
 
 
 import Header from "@/components/Header";
-import { ScrollView, Text, View, StyleSheet } from "react-native";
+import { ScrollView, Text, TextInput } from "react-native";
 import GroceryItem from "@/components/PlaceCard";
+
+import { useState } from 'react';
 
 const testItem = {
   id: "1",
@@ -18,9 +20,35 @@ const testItem = {
 
 export default function Index() {
 
+  const [name, setName] = useState("");
+  const [quanity, setQuanity] = useState(0);
+  const [category, setCategory] = useState("");
+  const [notes, setNotes] = useState("");
+  const [isBought, setIsBought] = useState(false);
+
+  type FormErrors = {
+    name?: string;
+    quanity?: number;
+    category?: string;
+    notes?: string;
+    isBought?: boolean;
+  }
+
+  const [errors, setErrors] = useState<FormErrors>({});
+
   return (
     <ScrollView>
-      <Header/>
+      <Header />
+
+      <Text style={{ color: "gray" }}>Place Form</Text>
+      {/* <TextInput value={name} onChangeText={setName} placeholder="Name" />
+
+      {
+        errors.name && (
+          <Text style={{ color: "red" }}>{errors.name}</Text>
+        )
+      } */}
+
       <GroceryItem item={testItem} />
       <GroceryItem item={testItem} />
       <GroceryItem item={testItem} />
