@@ -38,14 +38,45 @@ export default function Index() {
 
   return (
     <ScrollView>
-      <Header />
+      <Header/>
 
-      <Text style={{ color: "gray" }}>Place Form</Text>
       {/* <TextInput value={name} onChangeText={setName} placeholder="Name" />
 
       {
         errors.name && (
           <Text style={{ color: "red" }}>{errors.name}</Text>
+        )
+      }
+
+      <TextInput value={quanity} onChangeText={setQuanity} placeholder="Quanity" />
+
+      {
+        errors.quanity && (
+          <Text style={{ color: "red" }}>{errors.quanity}</Text>
+        )
+      }
+
+      <TextInput value={category} onChangeText={setCategory} placeholder="Category" />
+
+      {
+        errors.category && (
+          <Text style={{ color: "red" }}>{errors.category}</Text>
+        )
+      }
+
+      <TextInput value={notes} onChangeText={setNotes} placeholder="Notes" />
+
+      {
+        errors.notes && (
+          <Text style={{ color: "red" }}>{errors.notes}</Text>
+        )
+      }
+
+      <TextInput value={isBought} onChangeText={setIsBought} placeholder="Is Bought" />
+
+      {
+        errors.isBought && (
+          <Text style={{ color: "red" }}>{errors.isBought}</Text>
         )
       } */}
 
