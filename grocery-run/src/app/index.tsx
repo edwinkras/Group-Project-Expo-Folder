@@ -3,7 +3,10 @@
 
 import Header from "@/components/Header";
 import GroceryItem from "@/components/PlaceCard";
+import GroceryForm from "@/components/GroceryForm";
 import { ScrollView } from "react-native";
+import { Palette } from "@/constants/theme"; // added - Tracy
+
 
 import { useState } from "react";
 
@@ -12,7 +15,7 @@ const testItem = {
   name: "Porc",
   quantity: 1,
   category: "Meat",
-  notes: "saample grocery item.",
+  notes: "sample grocery item.",
   isBought: false,
 };
 
@@ -66,56 +69,76 @@ export default function Index() {
   }
 
   return (
-    <ScrollView>
-      <Header />
+  <ScrollView style={{ backgroundColor: Palette.background }} contentContainerStyle={{ backgroundColor: Palette.background }}> 
 
-      {/* <TextInput value={name} onChangeText={setName} placeholder="Name" />
+    <GroceryForm name={name} setName={setName} />
 
-      {
-        errors.name && (
-          <Text style={{ color: "red" }}>{errors.name}</Text>
-        )
-      }
+    {/* 
+    <TextInput value={name} onChangeText={setName} placeholder="Name" />
 
-      <TextInput value={quantity} onChangeText={setQuantity} placeholder="Quanity" />
+    {
+      errors.name && (
+        <Text style={{ color: "red" }}>{errors.name}</Text>
+      )
+    }
 
-      {
-        errors.quantity && (
-          <Text style={{ color: "red" }}>{errors.quantity}</Text>
-        )
-      }
+    <TextInput
+      value={quantity}
+      onChangeText={setQuantity}
+      placeholder="Quanity"
+    />
 
-      <TextInput value={category} onChangeText={setCategory} placeholder="Category" />
+    {
+      errors.quantity && (
+        <Text style={{ color: "red" }}>{errors.quantity}</Text>
+      )
+    }
 
-      {
-        errors.category && (
-          <Text style={{ color: "red" }}>{errors.category}</Text>
-        )
-      }
+    <TextInput
+      value={category}
+      onChangeText={setCategory}
+      placeholder="Category"
+    />
 
-      <TextInput value={notes} onChangeText={setNotes} placeholder="Notes" />
+    {
+      errors.category && (
+        <Text style={{ color: "red" }}>{errors.category}</Text>
+      )
+    }
 
-      {
-        errors.notes && (
-          <Text style={{ color: "red" }}>{errors.notes}</Text>
-        )
-      }
+    <TextInput
+      value={notes}
+      onChangeText={setNotes}
+      placeholder="Notes"
+    />
 
-      <TextInput value={isBought} onChangeText={setIsBought} placeholder="Is Bought" />
+    {
+      errors.notes && (
+        <Text style={{ color: "red" }}>{errors.notes}</Text>
+      )
+    }
 
-      {
-        errors.isBought && (
-          <Text style={{ color: "red" }}>{errors.isBought}</Text>
-        )
-      } */}
+    <TextInput
+      value={isBought}
+      onChangeText={setIsBought}
+      placeholder="Is Bought"
+    />
 
-      <GroceryItem item={testItem} />
-      <GroceryItem item={testItem} />
-      <GroceryItem item={testItem} />
-      <GroceryItem item={testItem} />
-      <GroceryItem item={testItem} />
-      <GroceryItem item={testItem} />
-      <GroceryItem item={testItem} />
-    </ScrollView>
-  );
+    {
+      errors.isBought && (
+        <Text style={{ color: "red" }}>{errors.isBought}</Text>
+      )
+    }
+    */}
+
+    <GroceryItem item={testItem} />
+    <GroceryItem item={testItem} />
+    <GroceryItem item={testItem} />
+    <GroceryItem item={testItem} />
+    <GroceryItem item={testItem} />
+    <GroceryItem item={testItem} />
+    <GroceryItem item={testItem} />
+
+  </ScrollView>
+);
 }
