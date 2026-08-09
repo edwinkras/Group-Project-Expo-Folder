@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { GroceryItem } from '@/lib/GroceryItem';
 import {View,Text,Button,StyleSheet} from 'react-native';
+import { Palette } from '@/constants/theme'; // added - Tracy
 
 
 type PlaceCardProps = {
@@ -16,12 +17,12 @@ const [Bought, setBought] = React.useState(item.isBought || false);
     return (
 
     <View style = {styles.card}>
-      <Text>{item.name}</Text>
-      <Text>{item.quantity} in {item.category}</Text>
-      <Text>{item.notes}</Text>
-      <Text>{Bought ? 'Checked' : 'Not checked'}</Text>
+      <Text style={styles.text}>{item.name}</Text>
+      <Text style={styles.text}>{item.quantity} in {item.category}</Text>
+      <Text style={styles.textMuted}>{item.notes}</Text>
+      <Text style={styles.textMuted}>{Bought ? 'Checked' : 'Not checked'}</Text>
 
-      <Button title="Mark as checked" onPress={() => setBought(true)} />
+      <Button color={Palette.accent} title="Mark as checked" onPress={() => setBought(true)} />
     </View>
   );
 }
@@ -34,7 +35,15 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         marginVertical: 15,
         marginHorizontal: 12,
-    }
+    },
+
+    // added - Tracy
+    text: {
+        color: Palette.text,
+    },
+    textMuted: {
+        color: Palette.textMuted,
+    },
 })
 
 
