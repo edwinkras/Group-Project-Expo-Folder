@@ -1,11 +1,44 @@
-import { View, TextInput, Pressable, Text, StyleSheet } from 'react-native';
+// I've had to revamp a lot of stuff here to make it work with FlatList 
 
-type GroceryFormProps = {
-  name: string;
-  setName: (value: string) => void;
-};
+import { View, TextInput, Pressable, Text, StyleSheet, FlatList } from 'react-native';
+import { useState } from 'react';
 
-export default function GroceryForm({ name, setName }: GroceryFormProps) {
+import { GroceryItem } from '@/lib/GroceryItem';
+import PlaceCard from "@/components/PlaceCard"
+
+// type GroceryFormProps = {
+//   name: string;
+//   setName: (value: string) => void;
+// };
+
+export default function GroceryForm() {
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [category, setCategory] = useState("");
+
+  const [groceryitem, setGroceryitem] = useState<GroceryItem[]>([]);
+
+  const clearForm = () => {
+    setName("");
+    setQuantity("");
+    setCategory("");
+  }
+
+  const addItem = () => {
+    const newGroceryItem: GroceryItem = {
+      id: Date.now().toString(),
+      name: name.trim(),
+      quantity: Number(quantity),
+      category: category.trim()
+    }
+
+    setGroceryitem([
+      ...groceryitem,
+      newGroceryItem,
+    ])
+
+    clearForm();
+  }
   return (
     <View style={styles.container}>
 
@@ -21,26 +54,41 @@ export default function GroceryForm({ name, setName }: GroceryFormProps) {
         style={styles.input}
         placeholder="Quantity"
         placeholderTextColor="#303847"
+        value={quantity}
         keyboardType="numeric"
+        onChangeText={setQuantity}
       />
 
       <TextInput
         style={styles.input}
         placeholder="Category"
         placeholderTextColor="#303847"
+        value={category}
+        onChangeText={setCategory}
       />
 
-      <Pressable style={styles.button}>
+      <Pressable style={styles.button} onPress={addItem}>
         <Text style={styles.buttonText}>Add Grocery</Text>
       </Pressable>
 
+
+      <FlatList
+        data={groceryitem}
+        keyExtractor={(groceryitem) => groceryitem.id}
+        renderItem={({ item }: { item: GroceryItem }) => (
+          <PlaceCard
+            item={item}
+          />
+        )}
+        ListEmptyComponent={<Text style={{ color: "blue" }}>No added groceries - Add one</Text>}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
+    marginTop: 41,
     width: '100%',
     gap: 12,
     padding: 20,
