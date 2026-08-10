@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { GroceryItem } from '@/lib/GroceryItem';
 import PlaceCard from "@/components/PlaceCard"
 
+import { Palette } from '@/constants/theme';
+
 // type GroceryFormProps = {
 //   name: string;
 //   setName: (value: string) => void;
@@ -73,6 +75,7 @@ export default function GroceryForm() {
 
 
       <FlatList
+        style={{ backgroundColor: Palette.background }}
         data={groceryitem}
         keyExtractor={(groceryitem) => groceryitem.id}
         renderItem={({ item }: { item: GroceryItem }) => (
