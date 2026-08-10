@@ -71,73 +71,7 @@ export default function Index() {
   return (
   <ScrollView style={{ backgroundColor: Palette.background }} contentContainerStyle={{ backgroundColor: Palette.background }}> 
 
-    <GroceryForm name={name} setName={setName} />
-
-    {/* 
-    <TextInput value={name} onChangeText={setName} placeholder="Name" />
-
-    {
-      errors.name && (
-        <Text style={{ color: "red" }}>{errors.name}</Text>
-      )
-    }
-
-    <TextInput
-      value={quantity}
-      onChangeText={setQuantity}
-      placeholder="Quanity"
-    />
-
-    {
-      errors.quantity && (
-        <Text style={{ color: "red" }}>{errors.quantity}</Text>
-      )
-    }
-
-    <TextInput
-      value={category}
-      onChangeText={setCategory}
-      placeholder="Category"
-    />
-
-    {
-      errors.category && (
-        <Text style={{ color: "red" }}>{errors.category}</Text>
-      )
-    }
-
-    <TextInput
-      value={notes}
-      onChangeText={setNotes}
-      placeholder="Notes"
-    />
-
-    {
-      errors.notes && (
-        <Text style={{ color: "red" }}>{errors.notes}</Text>
-      )
-    }
-
-    <TextInput
-      value={isBought}
-      onChangeText={setIsBought}
-      placeholder="Is Bought"
-    />
-
-    {
-      errors.isBought && (
-        <Text style={{ color: "red" }}>{errors.isBought}</Text>
-      )
-    }
-    */}
-
-    <GroceryItem item={testItem} />
-    <GroceryItem item={testItem} />
-    <GroceryItem item={testItem} />
-    <GroceryItem item={testItem} />
-    <GroceryItem item={testItem} />
-    <GroceryItem item={testItem} />
-    <GroceryItem item={testItem} />
+    <GroceryForm />
 
   </ScrollView>
 );
