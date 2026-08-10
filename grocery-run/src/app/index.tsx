@@ -7,6 +7,8 @@ import GroceryForm from "@/components/GroceryForm";
 import { ScrollView } from "react-native";
 import { Palette } from "@/constants/theme"; // added - Tracy
 
+import { View } from "react-native";
+
 
 import { useState } from "react";
 
@@ -69,10 +71,10 @@ export default function Index() {
   }
 
   return (
-  <ScrollView style={{ backgroundColor: Palette.background }} contentContainerStyle={{ backgroundColor: Palette.background }}> 
+  <View style={{ flex: 1, backgroundColor: Palette.background }}> 
 
     <GroceryForm />
 
-  </ScrollView>
+  </View>
 );
 }
