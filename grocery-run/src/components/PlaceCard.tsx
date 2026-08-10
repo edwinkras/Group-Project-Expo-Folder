@@ -19,7 +19,7 @@ const [Bought, setBought] = React.useState(item.isBought || false);
     <View style = {styles.card}>
       <Text style={styles.text}>{item.name}</Text>
       <Text style={styles.text}>{item.quantity} in {item.category}</Text>
-      <Text style={styles.textMuted}>{item.notes}</Text>
+      {/* <Text style={styles.textMuted}>{item.notes}</Text> */}
       <Text style={styles.textMuted}>{Bought ? 'Checked' : 'Not checked'}</Text>
 
       <Button color={Palette.accent} title="Mark as checked" onPress={() => setBought(true)} />

@@ -6,11 +6,11 @@
 
 
 export type GroceryItem = {
-    id?: string;
+    id: string;
     name: string;
     quantity: number;
     category: string; 
-    notes?: string;  
+    // notes?: string;  
     isBought?: boolean; 
 };
 
