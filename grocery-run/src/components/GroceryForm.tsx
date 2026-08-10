@@ -40,7 +40,7 @@ export default function GroceryForm({ name, setName }: GroceryFormProps) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginTop: 40,
     width: '100%',
     gap: 12,
     padding: 20,
